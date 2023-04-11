@@ -52,4 +52,3 @@ public class DataCustomer {
     @Column(name="password", length=16)
     private String password;
 }
-
