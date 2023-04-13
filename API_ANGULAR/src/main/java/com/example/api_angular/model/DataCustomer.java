@@ -1,22 +1,23 @@
 package com.example.api_angular.model;
 
-import jakarta.persistence.*;
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "clients")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="clients")
 public class DataCustomer {
     @Id
-    @NotNull
     @GeneratedValue
+    @NotNull
     private Integer id;
 
     @Column(name="firstName", length=50)
