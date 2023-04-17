@@ -42,7 +42,7 @@ public class DataCustomer {
     private String country;
 
     @Column(name="birthdate")
-    private Date birthdate;
+    private String birthdate;
 
     @Column(name="username", length=15)
     private String username;

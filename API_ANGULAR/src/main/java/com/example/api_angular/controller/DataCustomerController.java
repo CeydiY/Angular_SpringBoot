@@ -4,6 +4,7 @@ import com.example.api_angular.model.DataCustomer;
 import com.example.api_angular.repository.DataCustomerRepository;
 import com.example.api_angular.service.DataCustomerService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class DataCustomerController {
         }
     }
 
-    @PostMapping("/dataclient")
+    @PostMapping(value = "/dataclient",consumes = MediaType.APPLICATION_JSON_VALUE,produces =MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<Object> newDataClient (@RequestBody DataCustomer dataCustomer) throws Exception{
         DataCustomer newDataClient = new DataCustomer();
 
@@ -98,4 +99,6 @@ public class DataCustomerController {
             return new ResponseEntity<DataCustomer>(HttpStatus.NOT_FOUND);
         }
     }
+
+
 }
