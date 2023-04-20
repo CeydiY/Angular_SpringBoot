@@ -38,8 +38,8 @@ public class DataCustomer {
     @Column(name="gender", length=15)
     private String gender;
 
-    @Column(name="country", length=15)
-    private String country;
+    @Column(name="countries", length=15)
+    private String countries;
 
     @Column(name="birthdate")
     private String birthdate;

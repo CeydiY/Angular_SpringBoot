@@ -17,10 +17,10 @@ public class DataCustomerService {
     public void saveDataClient (DataCustomer dataCustomer){
         repository.save(dataCustomer);
     }
-    public DataCustomer getDataClientById(Integer id){
-        return repository.findById(id).get();
+    public DataCustomer getDataClientById(String id){
+            return repository.findByusername(id);
     }
-    public void deleteDataClient(Integer id){
-        repository.deleteById(id);
+    public void deleteDataClient(String id){
+        repository.deleteByusername(id);
     }
 }

@@ -27,7 +27,7 @@ public class DataCustomerController {
     }
 
     @GetMapping("/dataclient/{id}")
-    public ResponseEntity<DataCustomer> getDataClient(@PathVariable Integer id){
+    public ResponseEntity<DataCustomer> getDataClient(@PathVariable String id){
         try{
             DataCustomer dataCustomer = dataCustomerService.getDataClientById(id);
             return ResponseEntity.ok(dataCustomer);
@@ -55,8 +55,8 @@ public class DataCustomerController {
         }
 
     }
-    @PutMapping("/dataclient/{id}")
-    public ResponseEntity<?> editDataClient(@RequestBody DataCustomer dataCustomer, @PathVariable Integer id){
+    @PutMapping(value = "/dataclient/{id}")
+    public ResponseEntity<?> editDataClient(@RequestBody DataCustomer dataCustomer, @PathVariable String id){
         DataCustomer newDataClient = dataCustomerService.getDataClientById(id);
 
         if(newDataClient == null){
@@ -64,17 +64,11 @@ public class DataCustomerController {
         }
 
         try{
-            newDataClient.setId(newDataClient.getId());
             newDataClient.setFirstName(dataCustomer.getFirstName());
             newDataClient.setLastName(dataCustomer.getLastName());
             newDataClient.setName(dataCustomer.getName());
             newDataClient.setAge(dataCustomer.getAge());
             newDataClient.setAddress(dataCustomer.getAddress());
-            newDataClient.setGender(dataCustomer.getGender());
-            newDataClient.setCountry(dataCustomer.getCountry());
-            newDataClient.setUsername(dataCustomer.getUsername());
-            newDataClient.setEmail(dataCustomer.getEmail());
-            newDataClient.setPassword(dataCustomer.getPassword());
 
             dataCustomerService.saveDataClient(newDataClient);
             return new ResponseEntity<DataCustomer>(HttpStatus.OK);
@@ -85,7 +79,7 @@ public class DataCustomerController {
     }
 
     @DeleteMapping("/dataclient/{id}")
-    public ResponseEntity<DataCustomer> deleteProduct(@PathVariable Integer id){
+    public ResponseEntity<DataCustomer> deleteProduct(@PathVariable String id){
         DataCustomer newDataClient = dataCustomerService.getDataClientById(id);
 
         if(newDataClient == null){
