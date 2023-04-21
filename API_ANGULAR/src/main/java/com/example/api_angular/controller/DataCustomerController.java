@@ -67,7 +67,6 @@ public class DataCustomerController {
             newDataClient.setFirstName(dataCustomer.getFirstName());
             newDataClient.setLastName(dataCustomer.getLastName());
             newDataClient.setName(dataCustomer.getName());
-            newDataClient.setAge(dataCustomer.getAge());
             newDataClient.setAddress(dataCustomer.getAddress());
 
             dataCustomerService.saveDataClient(newDataClient);
